@@ -1075,7 +1075,7 @@ class TsumPanelView(discord.ui.View):
         await _reject_unauthorized(interaction)
         return False
 
-    @discord.ui.button(label="🎮 代行を依頼する", style=discord.ButtonStyle.green)
+    @discord.ui.button(label="購入", style=discord.ButtonStyle.green)
     async def order(
     self,
     interaction: discord.Interaction,
