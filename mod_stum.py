@@ -907,9 +907,6 @@ class TsumOrderModal(discord.ui.Modal):
         self.category_id = category_id
 
     async def on_submit(self, interaction: discord.Interaction):
-        if not _member_has_role(interaction, self.role_id):
-            await _reject_unauthorized(interaction)
-            return
 
         if not _is_valid_paypay_link(self.paypay_link.value):
             await interaction.response.send_message(
