@@ -1045,12 +1045,6 @@ class TsumMenuSelectView(discord.ui.View):
         self.select.callback = self._on_select
         self.add_item(self.select)
 
-    async def interaction_check(self, interaction: discord.Interaction) -> bool:
-        if _member_has_role(interaction, self.role_id):
-            return True
-        await _reject_unauthorized(interaction)
-        return False
-
     async def _on_select(self, interaction: discord.Interaction):
         order = list(MENUS)
         modes = sorted(self.select.values, key=order.index)
