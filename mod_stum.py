@@ -1069,12 +1069,6 @@ class TsumPanelView(discord.ui.View):
         self.category_id = category_id
         self.order.custom_id = f"tsum_order:{panel_id}"
 
-    async def interaction_check(self, interaction: discord.Interaction) -> bool:
-        if _member_has_role(interaction, self.role_id):
-            return True
-        await _reject_unauthorized(interaction)
-        return False
-
     @discord.ui.button(label="購入", style=discord.ButtonStyle.green)
     async def order(
     self,
