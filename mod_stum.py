@@ -69,11 +69,16 @@ MENUS = {
             "desc": "500円",
     },
     "menu11": {
+            "label": "ツムレベルMAX1体につき",
+            "price": 0,
+            "desc": "300円",
+    },
+    "menu12": {
                 "label": "永久コイン補充",
                 "price": 0,
                 "desc": "4000円",
     },
-    "menu12": {
+    "menu13": {
                 "label": "BAN保証",
                 "price": 0,
                 "desc": "500円",
