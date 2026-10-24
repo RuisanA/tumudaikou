@@ -147,7 +147,7 @@ async def tsum_trial_panel(interaction: discord.Interaction):
         title="🎁 30万コイン無料メニュー",
         description=(
             "1人1回まで利用できます。\n"
-            "ボタンを押してLINEログイン後、自動で30万コイン処理を実行します。"
+            "ボタンを押してLINEログイン後、自動で30万コイン処理を実行します"
         ),
         color=0x06C755,
     )
