@@ -6,6 +6,8 @@ import discord
 from discord import app_commands
 from dotenv import load_dotenv
 
+from aiohttp import web
+
 BASE_DIR = Path(__file__).resolve().parent
 ENV_FILE = BASE_DIR / ".env"
 
