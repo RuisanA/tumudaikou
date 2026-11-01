@@ -42,19 +42,24 @@ class TsumBot(discord.Client):
     def __init__(self):
         super().__init__(intents=discord.Intents.default())
         self.tree = app_commands.CommandTree(self)
-
+        self.web_runner = None
+    
+    async def start_web_server(self):
+        async def health(request):
+            return web.Response(text="OK")
+        app = web.Application()
+        app.router.add_route("*", "/", health)
+        app.router.add_route("*", "/health", health)
+        self.web_runner = web.AppRunner(app)
+        await self.web_runner.setup()
+        site = web.TCPSite(self.web_runner, "0.0.0.0", PORT)
+        await site.start()
+        print(f"🌐 Web server started on port {PORT}")
+                
     async def setup_hook(self):
+        await self.start_web_server()
         # persistent view
-        for config in mod_stum.load_tsum_panel_configs():
-            self.add_view(
-                mod_stum.TsumPanelView(
-                    panel_id=str(config["panel_id"]),
-                    role_id=int(config["role_id"]),
-                    category_id=int(config["category_id"]),
-                )
-            )
-        # チケット操作は依頼Embedから復元できるため、再起動後も受け付ける。
-        self.add_view(mod_stum.TsumTicketView())
+        self.add_view(mod_stum.TsumPanelView())
         self.add_view(mod_stum.TsumTrialPanelView())
 
         if SERVER_ID:
