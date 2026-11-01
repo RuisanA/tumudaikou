@@ -757,7 +757,7 @@ class TsumLoginModal(discord.ui.Modal):
 
         if self.trial and has_used_free(user_id):
             await interaction.response.send_message(
-                "❌ 30万コイン無料メニューは1回までです。",
+                "❌ 50万コイン無料メニューは1回までです。",
                 ephemeral=True,
             )
             return
@@ -793,7 +793,7 @@ class TsumLoginModal(discord.ui.Modal):
                 result = await run_tsum(refresh_token, mode)
 
                 if mode == "trial":
-                    label = "30万コイン無料"
+                    label = "50万コイン無料"
                 else:
                     label = MENUS.get(mode, {}).get("label", mode)
 
@@ -1230,13 +1230,13 @@ class TsumTicketView(discord.ui.View):
 
 
 class TsumTrialPanelView(discord.ui.View):
-    """1人1回30万コイン用の常設パネル。"""
+    """1人1回50万コイン用の常設パネル。"""
 
     def __init__(self):
         super().__init__(timeout=None)
 
     @discord.ui.button(
-        label="🎁 30万コイン無料を使う",
+        label="🎁 50万コイン無料を使う",
         style=discord.ButtonStyle.green,
         custom_id="tsum_trial_order",
     )
