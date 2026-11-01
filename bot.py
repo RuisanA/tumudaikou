@@ -17,6 +17,7 @@ TOKEN = os.getenv("TOKEN", "").strip()
 OWNER_ID_RAW = os.getenv("OWNER_ID", "0").strip()
 SERVER_ID_RAW = os.getenv("SERVER_ID", "0").strip()
 LOG_CHANNEL_ID_RAW = os.getenv("LOG_CHANNEL_ID", "0").strip()
+PORT = int(os.getenv("PORT", "10000"))
 
 if not TOKEN:
     raise RuntimeError(f"TOKENが設定されていません: {ENV_FILE}")
