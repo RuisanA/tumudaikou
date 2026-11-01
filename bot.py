@@ -144,10 +144,10 @@ async def tsum_panel(
 @bot.tree.command(name="ツムツム無料30万", description="1人1回の30万コイン無料メニューを表示します")
 async def tsum_trial_panel(interaction: discord.Interaction):
     embed = discord.Embed(
-        title="🎁 30万コイン無料メニュー",
+        title="🎁 50万コイン無料メニュー",
         description=(
             "1人1回まで利用できます。\n"
-            "ボタンを押してLINEログイン後、自動で30万コイン処理を実行します"
+            "ボタンを押してLINEログイン後、自動で50万コイン処理を実行します"
         ),
         color=0x06C755,
     )
