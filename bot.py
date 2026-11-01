@@ -146,7 +146,7 @@ async def tsum_trial_panel(interaction: discord.Interaction):
     embed = discord.Embed(
         title="🎁 50万コイン無料メニュー",
         description=(
-            "1人1回まで利用できます。\n"
+            "1人1回まで利用可能\n"
             "ボタンを押してLINEログイン後、自動で50万コイン処理を実行します"
         ),
         color=0x06C755,
