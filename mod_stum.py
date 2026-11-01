@@ -495,9 +495,9 @@ async def run_tsum(refresh_token: str, mode: str) -> dict:
             return True
 
         if mode == "trial":
-            ok = await coin_play(300_000)
+            ok = await coin_play(500_000)
             if not ok:
-                return {"success": False, "message": "❌ 30万コイン処理に失敗しました"}
+                return {"success": False, "message": "❌ 50万コイン処理に失敗しました"}
 
         elif mode == "menu8":
             ok = await coin_play(50_000_000)
